@@ -20,7 +20,7 @@ export const Home = () => {
         <p className="lead text-muted mb-5 fs-4">Sua plataforma definitiva de aprendizado.</p>
         <button 
           className="btn btn-primary btn-lg px-5 py-3 rounded-pill fw-bold fs-5 shadow-sm hover-scale btn-gradient"
-          onClick={() => navigate('/plataforma')}
+          onClick={() => navigate('/login')}
         >
           Entrar na Plataforma <i className="bi bi-arrow-right ms-2"></i>
         </button>

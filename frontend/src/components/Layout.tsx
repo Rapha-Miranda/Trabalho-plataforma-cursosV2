@@ -1,8 +1,11 @@
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { useAuth } from "../contexts/AuthContext";
 
 export const Layout = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+  const { role, logout, isAuthenticated } = useAuth();
 
   // Close offcanvas when location changes
   useEffect(() => {
@@ -15,6 +18,14 @@ export const Layout = () => {
       }
     }
   }, [location]);
+
+  const handleLogout = () => {
+    logout();
+    navigate("/");
+  };
+
+  const displayName = role === 'admin' ? 'Administrador' : role === 'user' ? 'Usuário Padrão' : 'Visitante';
+  const displayInitial = displayName.charAt(0);
 
   return (
     <div className="app-container">
@@ -44,9 +55,9 @@ export const Layout = () => {
         <div className="offcanvas-header border-bottom border-secondary">
           <div className="d-flex align-items-center gap-3">
             <div className="avatar-circle">
-              <span className="text-dark fw-bold">R</span>
+              <span className="text-dark fw-bold">{displayInitial}</span>
             </div>
-            <h5 className="offcanvas-title mb-0" id="sidebarLabel">Raphael</h5>
+            <h5 className="offcanvas-title mb-0" id="sidebarLabel">{displayName}</h5>
           </div>
           <button
             type="button"
@@ -55,7 +66,7 @@ export const Layout = () => {
             aria-label="Close"
           ></button>
         </div>
-        <div className="offcanvas-body p-0">
+        <div className="offcanvas-body p-0 d-flex flex-column justify-content-between">
           <div className="list-group list-group-flush mt-3">
             <Link
               to="/"
@@ -65,13 +76,24 @@ export const Layout = () => {
               Home
             </Link>
             <Link
-              to="/plataforma"
+              to={isAuthenticated ? "/plataforma" : "/login"}
               className={`list-group-item list-group-item-action bg-transparent text-light border-0 px-4 py-3 sidebar-link ${location.pathname === '/plataforma' ? 'active-link' : ''}`}
             >
               <i className="bi bi-mortarboard me-3"></i>
               Jotta's Cursos
             </Link>
           </div>
+          
+          {isAuthenticated && (
+            <div className="p-4 border-top border-secondary">
+              <button 
+                className="btn btn-outline-danger w-100 d-flex align-items-center justify-content-center gap-2"
+                onClick={handleLogout}
+              >
+                <i className="bi bi-box-arrow-right"></i> Sair da Conta
+              </button>
+            </div>
+          )}
         </div>
       </div>
 
