@@ -1,0 +1,240 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "NomeCompleto": "Raphael Admin",
+      "Email": "admin@jottas.com",
+      "SenhaHash": "admin123",
+      "DataCadastro": "2026-01-01"
+    },
+    {
+      "id": "2",
+      "NomeCompleto": "João Aluno",
+      "Email": "joao@email.com",
+      "SenhaHash": "aluno123",
+      "DataCadastro": "2026-05-01"
+    },
+    {
+      "NomeCompleto": "Raphael Miranda",
+      "Email": "raphael-avila-miranda@hotmail.com",
+      "SenhaHash": "123",
+      "DataCadastro": "2026-06-03",
+      "id": "6k5TBxv"
+    },
+    {
+      "NomeCompleto": "Raphael Miranda",
+      "Email": "raphael-avila-miranda@hotmail.com",
+      "SenhaHash": "123",
+      "DataCadastro": "2026-06-03",
+      "id": "hEX1UJs"
+    }
+  ],
+  "categorias": [
+    {
+      "id": "1",
+      "Nome": "Programação",
+      "Descricao": "Cursos de desenvolvimento de software"
+    },
+    {
+      "id": "2",
+      "Nome": "Design",
+      "Descricao": "Cursos de UX/UI e Design Gráfico"
+    }
+  ],
+  "cursos": [
+    {
+      "id": "1",
+      "Titulo": "Desenvolvimento Web Completo",
+      "Descricao": "HTML, CSS e JS",
+      "ID_Instrutor": "1",
+      "ID_Categoria": "1",
+      "Nivel": "Iniciante",
+      "DataPublicacao": "2026-02-10",
+      "TotalAulas": 40,
+      "TotalHoras": 20
+    },
+    {
+      "id": "2",
+      "Titulo": "Masterclass de React",
+      "Descricao": "React avançado",
+      "ID_Instrutor": "1",
+      "ID_Categoria": "1",
+      "Nivel": "Avançado",
+      "DataPublicacao": "2026-03-15",
+      "TotalAulas": 25,
+      "TotalHoras": 15
+    }
+  ],
+  "modulos": [
+    {
+      "id": "1",
+      "ID_Curso": "1",
+      "Titulo": "Módulo 1: Fundamentos",
+      "Ordem": 1
+    },
+    {
+      "id": "2",
+      "ID_Curso": "2",
+      "Titulo": "Módulo 1: Hooks",
+      "Ordem": 1
+    }
+  ],
+  "aulas": [
+    {
+      "id": "1",
+      "ID_Modulo": "1",
+      "Titulo": "Introdução ao HTML",
+      "TipoConteudo": "Vídeo",
+      "URL_Conteudo": "https://youtube.com/html",
+      "DuracaoMinutos": 15,
+      "Ordem": 1
+    },
+    {
+      "id": "2",
+      "ID_Modulo": "2",
+      "Titulo": "UseState Avançado",
+      "TipoConteudo": "Vídeo",
+      "URL_Conteudo": "https://youtube.com/react",
+      "DuracaoMinutos": 20,
+      "Ordem": 1
+    },
+    {
+      "Titulo": "Teste",
+      "URL_Conteudo": "https://www.youtube.com/watch?v=md00dcXfpRI",
+      "DuracaoMinutos": 15,
+      "ID_Modulo": "1",
+      "TipoConteudo": "Vídeo",
+      "Ordem": 1,
+      "id": "DUutgjM"
+    }
+  ],
+  "matriculas": [
+    {
+      "id": "1",
+      "ID_Usuario": "2",
+      "ID_Curso": "1",
+      "DataMatricula": "2026-05-10",
+      "DataConclusao": null
+    }
+  ],
+  "progresso_aulas": [
+    {
+      "id": "1",
+      "ID_Usuario": "2",
+      "ID_Aula": "1",
+      "DataConclusao": "2026-05-11",
+      "Status": "Concluído"
+    }
+  ],
+  "avaliacoes": [
+    {
+      "id": "1",
+      "ID_Usuario": "2",
+      "ID_Curso": "1",
+      "Nota": 5,
+      "Comentario": "Excelente curso!",
+      "DataAvaliacao": "2026-05-12"
+    }
+  ],
+  "trilhas": [
+    {
+      "id": "1",
+      "Titulo": "Trilha Fullstack JavaScript",
+      "Descricao": "Torne-se Fullstack",
+      "ID_Categoria": "1"
+    },
+    {
+      "Titulo": "Teste",
+      "Descricao": "Teste",
+      "ID_Categoria": "2",
+      "id": "NfpuKKG"
+    }
+  ],
+  "trilhas_cursos": [
+    {
+      "id": "1",
+      "ID_Trilha": "1",
+      "ID_Curso": "1",
+      "Ordem": 1
+    },
+    {
+      "id": "2",
+      "ID_Trilha": "1",
+      "ID_Curso": "2",
+      "Ordem": 2
+    }
+  ],
+  "certificados": [
+    {
+      "id": "1",
+      "ID_Usuario": "2",
+      "ID_Curso": "1",
+      "ID_Trilha": null,
+      "CodigoVerificacao": "JOTTA-WEB-8842",
+      "DataEmissao": "2026-05-15"
+    }
+  ],
+  "planos": [
+    {
+      "id": "1",
+      "Nome": "Plano Mensal",
+      "Descricao": "Acesso a todos os cursos mensais",
+      "Preco": 49.9,
+      "DuracaoMeses": 1
+    },
+    {
+      "id": "2",
+      "Nome": "Plano Anual",
+      "Descricao": "Acesso anual com desconto",
+      "Preco": 499,
+      "DuracaoMeses": 12
+    }
+  ],
+  "assinaturas": [
+    {
+      "id": "1",
+      "ID_Usuario": "2",
+      "ID_Plano": "1",
+      "DataInicio": "2026-05-01",
+      "DataFim": "2026-06-01"
+    },
+    {
+      "ID_Plano": "2",
+      "ID_Usuario": "2",
+      "DataInicio": "2026-06-03",
+      "DataFim": "2027-06-03",
+      "id": "PBJCbdr"
+    },
+    {
+      "ID_Plano": "1",
+      "ID_Usuario": "2",
+      "DataInicio": "2026-06-03",
+      "DataFim": "2026-07-03",
+      "id": "2uf19cK"
+    },
+    {
+      "ID_Plano": "1",
+      "ID_Usuario": "2",
+      "DataInicio": "2026-06-03",
+      "DataFim": "2026-07-03",
+      "id": "Lm8lA-A"
+    },
+    {
+      "ID_Plano": "2",
+      "ID_Usuario": "2",
+      "DataInicio": "2026-06-03",
+      "DataFim": "2027-06-03",
+      "id": "8KXngdc"
+    }
+  ],
+  "pagamentos": [
+    {
+      "id": "1",
+      "ID_Assinatura": "1",
+      "ValorPago": 49.9,
+      "DataPagamento": "2026-05-01",
+      "MetodoPagamento": "Cartão de Crédito",
+      "Id_Transacao_Gateway": "TXN_987654321"
+    }
+  ]
+}
